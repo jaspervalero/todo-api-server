@@ -21,7 +21,7 @@ const port = process.env.PORT || 3090;
 /*_____ DB SETUP _____*/
 
 // Connect Mongoose to local instance of MongoDB
-mongoose.connect( 'mongodb://localhost:auth/auth' );
+mongoose.connect( 'mongodb://localhost:todo/todo' );
 
 /*_____ APP SETUP _____*/
 
