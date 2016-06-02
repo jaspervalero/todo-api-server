@@ -44,3 +44,24 @@ exports.read = function( req, res, next ) {
 		});
 	});
 };
+
+exports.update = function( req, res, next ) {
+	const board_id = req.body.board_id;
+	const title = req.body.title;
+
+	// Handle missing title
+	if ( ! title ) {
+		return res.status( 422 ).send({
+			error: 'You must provide an updated title.'
+		});
+	}
+
+	Board.findOneAndUpdate({ _id: board_id }, { title },
+		function( err, user ) {
+			if ( err ) { return next( err ); }
+
+			res.json({
+				success: 'Board updated!'
+			})
+		});
+};

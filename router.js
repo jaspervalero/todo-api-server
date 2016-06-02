@@ -34,5 +34,6 @@ module.exports = function( app ) {
 	// Boards routes
 	app.post( '/boards', Board.create );
 	app.get( '/boards/:board_id', Board.read );
+	app.put( '/boards', Board.update );
 
 };
