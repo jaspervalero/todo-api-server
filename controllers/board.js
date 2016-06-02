@@ -31,4 +31,16 @@ exports.create = function( req, res, next ) {
 
 		res.json({ board });
 	});
-}
+};
+
+exports.read = function( req, res, next ) {
+	const board_id = req.params.board_id;
+
+	Board.find({ _id: board_id }, function( err, board ) {
+		if ( err ) { return next( err ); }
+
+		res.json({
+			board
+		});
+	});
+};
