@@ -36,5 +36,6 @@ module.exports = function( app ) {
 	app.get( '/boards/:board_id', Board.read );
 	app.put( '/boards', Board.update );
 	app.delete( '/boards/:board_id', Board.delete );
+	app.get( '/boards/all/:user_id', Board.readAll );
 
 };

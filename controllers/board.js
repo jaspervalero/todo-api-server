@@ -77,10 +77,20 @@ exports.delete = function( req, res, next ) {
 	}
 
 	Board.remove({ _id: board_id }, function( err ) {
-		if( err ) { return next( err ); }
+		if ( err ) { return next( err ); }
 
 		res.json({
 			success: 'Board deleted!'
 		})
+	});
+};
+
+exports.readAll = function( req, res, next ) {
+	const user_id = req.params.user_id;
+
+	Board.find({ user_id }, function( err, boards ) {
+		if ( err ) { return next( err ); }
+
+		res.json({ boards });
 	});
 };
