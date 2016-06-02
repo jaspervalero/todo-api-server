@@ -9,6 +9,7 @@ const passport = require( 'passport' );
 
 const Authentication = require( './controllers/authentication' );
 const passportService = require( './services/passport' );
+const Board = require( './controllers/board' );
 
 /**
  * Create auth helpers, which disable Passport's default cookie
@@ -29,5 +30,8 @@ module.exports = function( app ) {
 
 	// Signin route
 	app.post( '/signin', requireSignin, Authentication.signin );
+
+	// Boards routes
+	app.post( '/boards', Board.create );
 
 };
