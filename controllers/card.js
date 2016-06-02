@@ -87,3 +87,13 @@ exports.update = function( req, res, next ) {
 			res.json({ success: 'Card updated!' });
 		});
 };
+
+exports.delete = function( req, res, next ) {
+	const card_id = req.params.card_id;
+
+	Card.remove({ _id: card_id }, function( err ) {
+		if ( err ) { return next( err ); }
+
+		res.json({ success: 'Card deleted!' });
+	});
+};

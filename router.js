@@ -43,5 +43,6 @@ module.exports = function( app ) {
 	app.post( '/cards', Card.create );
 	app.get( '/cards/:card_id', Card.read );
 	app.put( '/cards', Card.update );
+	app.delete( '/cards/:card_id', Card.delete );
 
 };
