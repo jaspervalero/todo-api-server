@@ -1,6 +1,6 @@
 {
   "name": "todo-api-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "API server for react-redux-todo.",
   "main": "index.js",
   "scripts": {

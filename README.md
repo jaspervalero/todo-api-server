@@ -1,5 +1,5 @@
 #todo-api-server
-Boilerplate code for a Node.js API Server.
+A very basic API written for a Todo application I created for a coding challenge.
 
 ## Technologies Used
 * Express (Server)
@@ -14,7 +14,7 @@ Boilerplate code for a Node.js API Server.
 You will need Node.js and MongoDB installed and running in your local environment.
 
 ## Usage
-1. **Clone repo** - `git clone https://github.com/jaspervalero/node-api-starter.git`
+1. **Clone repo** - `git clone https://github.com/jaspervalero/todo-api-server.git`
 2. **Install dependencies** - `npm install` (1st time only)
 3. **Create 'config.js'** file in root directory with the following code to start:
 
