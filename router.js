@@ -35,5 +35,6 @@ module.exports = function( app ) {
 	app.post( '/boards', Board.create );
 	app.get( '/boards/:board_id', Board.read );
 	app.put( '/boards', Board.update );
+	app.delete( '/boards/:board_id', Board.delete );
 
 };

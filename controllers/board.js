@@ -65,3 +65,22 @@ exports.update = function( req, res, next ) {
 			})
 		});
 };
+
+exports.delete = function( req, res, next ) {
+	const board_id = req.params.board_id;
+
+	// Handle missing board_id
+	if ( ! board_id ) {
+		return res.status( 422 ).send({
+			error: 'You must provide a board_id.'
+		});
+	}
+
+	Board.remove({ _id: board_id }, function( err ) {
+		if( err ) { return next( err ); }
+
+		res.json({
+			success: 'Board deleted!'
+		})
+	});
+};
