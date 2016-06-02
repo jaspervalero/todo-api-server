@@ -44,5 +44,6 @@ module.exports = function( app ) {
 	app.get( '/cards/:card_id', Card.read );
 	app.put( '/cards', Card.update );
 	app.delete( '/cards/:card_id', Card.delete );
+	app.get( '/cards/all/:board_id', Card.readAll );
 
 };

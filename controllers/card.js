@@ -97,3 +97,13 @@ exports.delete = function( req, res, next ) {
 		res.json({ success: 'Card deleted!' });
 	});
 };
+
+exports.readAll = function( req, res, next ) {
+	const board_id = req.params.board_id;
+
+	Card.find({ board_id }, function( err, cards ) {
+		if ( err ) { return next( err ); }
+
+		res.json({ cards });
+	});
+};
