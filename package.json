@@ -1,7 +1,7 @@
 {
-  "name": "node-api-starter",
-  "version": "1.0.1",
-  "description": "Boilerplate code for a Node.js API Server.",
+  "name": "todo-api-server",
+  "version": "0.0.0",
+  "description": "API server for react-redux-todo.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaspervalero/node-api-starter.git"
+    "url": "git+https://github.com/jaspervalero/todo-api-server.git"
   },
   "keywords": [
     "node",
@@ -26,9 +26,9 @@
   "author": "Jasper Valero <contact@jaspervalero.com> (http://jaspervalero.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jaspervalero/node-api-starter/issues"
+    "url": "https://github.com/jaspervalero/todo-api-server/issues"
   },
-  "homepage": "https://github.com/jaspervalero/node-api-starter#readme",
+  "homepage": "https://github.com/jaspervalero/todo-api-server#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "1.15.1",
