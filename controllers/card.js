@@ -50,3 +50,40 @@ exports.read = function( req, res, next ) {
 		res.json({ card });
 	});
 };
+
+exports.update = function( req, res, next ) {
+	const card_id = req.body.card_id;
+	const board_id = req.body.board_id;
+	const title = req.body.title;
+	const description = req.body.description;
+	const assignee = req.body.assignee;
+	const due_date = req.body.due_date;
+	let updatedCard = {};
+
+	if ( board_id ) {
+		updatedCard.board_id = board_id;
+	}
+
+	if ( title ) {
+		updatedCard.title = title;
+	}
+
+	if ( description ) {
+		updatedCard.description = description;
+	}
+
+	if ( assignee ) {
+		updatedCard.assignee = assignee;
+	}
+
+	if ( due_date ) {
+		updatedCard.due_date = due_date;
+	}
+
+	Card.findOneAndUpdate({ _id: card_id }, updatedCard,
+		function( err, user ) {
+			if ( err ) { return next( err ) ; }
+
+			res.json({ success: 'Card updated!' });
+		});
+};

@@ -42,5 +42,6 @@ module.exports = function( app ) {
 	// Cards routes
 	app.post( '/cards', Card.create );
 	app.get( '/cards/:card_id', Card.read );
+	app.put( '/cards', Card.update );
 
 };
