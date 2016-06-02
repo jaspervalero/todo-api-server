@@ -40,3 +40,13 @@ exports.create = function( req, res, next ) {
 		});
 	});
 };
+
+exports.read = function( req, res, next ) {
+	const card_id = req.params.card_id;
+
+	Card.find({ _id: card_id }, function( err, card ) {
+		if ( err ) { return next( err ); }
+
+		res.json({ card });
+	});
+};
