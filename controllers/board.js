@@ -39,9 +39,7 @@ exports.read = function( req, res, next ) {
 	Board.find({ _id: board_id }, function( err, board ) {
 		if ( err ) { return next( err ); }
 
-		res.json({
-			board
-		});
+		res.json({ board });
 	});
 };
 
@@ -60,9 +58,7 @@ exports.update = function( req, res, next ) {
 		function( err, user ) {
 			if ( err ) { return next( err ); }
 
-			res.json({
-				success: 'Board updated!'
-			})
+			res.json({ success: 'Board updated!' });
 		});
 };
 
@@ -79,9 +75,7 @@ exports.delete = function( req, res, next ) {
 	Board.remove({ _id: board_id }, function( err ) {
 		if ( err ) { return next( err ); }
 
-		res.json({
-			success: 'Board deleted!'
-		})
+		res.json({ success: 'Board deleted!' });
 	});
 };
 
