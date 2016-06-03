@@ -14,7 +14,7 @@ const cardSchema = new Schema({
 	title: String,
 	description: String,
 	assignee: String,
-	due_date: Date
+	due_date: String
 });
 
 // Create and export ModelClass

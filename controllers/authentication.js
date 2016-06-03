@@ -19,14 +19,17 @@ function tokenForUser( user ) {
 	const timestamp = new Date().getTime();
 
 	return jwt.encode({
-		sub: user.id,
+		sub: user._id,
 		iat: timestamp // Issued At Time
 	}, config.secret );
 }
 
 exports.signin = function( req, res, next ) {
 	// User already auth'd, return token
-	res.send({ token: tokenForUser( req.user ) });
+	res.send({
+		token: tokenForUser( req.user ),
+		user_id: req.user._id
+	});
 };
 
 exports.signup = function( req, res, next ) {
@@ -61,9 +64,12 @@ exports.signup = function( req, res, next ) {
 			// Handle errors
 			if ( err ) { return next( err ); }
 
+				console.log( user );
+
 			// Return user token indicating user was created
 			res.json({
-				token: tokenForUser( user )
+				token: tokenForUser( user ),
+				user_id: user._id
 			});
 		});
 	});
