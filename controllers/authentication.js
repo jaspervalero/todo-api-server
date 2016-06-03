@@ -26,7 +26,10 @@ function tokenForUser( user ) {
 
 exports.signin = function( req, res, next ) {
 	// User already auth'd, return token
-	res.send({ token: tokenForUser( req.user ) });
+	res.send({
+		token: tokenForUser( req.user ),
+		user_id: req.user.id
+	});
 };
 
 exports.signup = function( req, res, next ) {
@@ -63,7 +66,8 @@ exports.signup = function( req, res, next ) {
 
 			// Return user token indicating user was created
 			res.json({
-				token: tokenForUser( user )
+				token: tokenForUser( user ),
+				user_id: req.user.id
 			});
 		});
 	});
